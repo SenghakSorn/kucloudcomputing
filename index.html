@@ -1,73 +1,35 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-   <meta charset="ISO-8859-1">
-   <title>Insert title here</title>
-
+   <title>Testing CEH</title>
 </head>
 
 <body>
+  <h1> Please Input your Information </h1>
 
-   <script>
-      // USING DATE OBJECT
-      var dateObj = new Date();
-      document.write("Current Date and Time USING DATE OBJECT :-  " + dateObj + "<br/>");
-      document.write("Current Date  M/D/YYYY :- " + dateObj.toLocaleDateString("en-US") + "<br/>");
+  <form action="#"> 
 
-      var options = { weekday: "long", year: "numeric", month: "short", day: "numeric" };
-      document.write("Current Date :- " + dateObj.toLocaleDateString("en-US", options) + "<br/>");
+  <label for="name">Name: </label>  
+  <input type="text" pattern="[a-zA-Z ]{3,10}" 
+     title="Min 3 letter Max 10 letter Name" placeholder="Enter Name"
+	 id="name" name="name" required /> 
 
-      document.write("Current TIME :- " + dateObj.toTimeString() + "<br/>");
+  <br/><br/>
 
-   </script>
+  <label for="mobileno">Mobile No: </label>  
+  <input type="tel" pattern="[6789]\d{9}" 
+    title="10 digit Mobile No" placeholder="xx-xxxx-xxxx" 
+	id="mobileno" name="mobileno" required /> 
 
+  <br/><br/>
 
-   <br />
-   <br />
-   Current Time Demo: <span id="timedisp"></span>
-   <script>
-      var today = new Date();
-      var h = today.getHours();
-      var m = today.getMinutes();
-      var s = today.getSeconds();
-      document.getElementById('timedisp').innerHTML = h + ":" + m + ":" + s;  
-   </script>
-
-
-   <br />
-   <br />
-   DIGITAL CLOCK : <span id="clockdisp"></span>
-   <script>
-
-      window.onload = function () { getTime(); }
-
-      function getTime() {
-         var today = new Date();
-         var h = today.getHours();
-         var m = today.getMinutes();
-         var s = today.getSeconds();
-
-         // add a zero in front of numbers<10  
-         h = checkTime(h);
-         m = checkTime(m);
-         s = checkTime(s);
-
-         document.getElementById('clockdisp').innerHTML = h + ":" + m + ":" + s;
-
-         //Recursive Function Call
-         setTimeout(function () { getTime() }, 1000);
-         setInterval("getTime()",1000);//another way
-      }
-
-      function checkTime(i) {
-         if (i < 10) {
-            i = "0" + i;
-         }
-         return i;
-      }  
-   </script>
-
+  <label for="email">Email: </label>  
+  <input type="email" pattern="\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+" 
+    title="Enter Correct Email" placeholder="Enter Email" 
+	id="email" name="email"  required /> 
+  
+  <br/><br/>
+  <a href="https://docs.google.com/forms/d/1weFmB41I5APakWrg264As3-SBTBLJXRtLfyjI8xFk0k/edit?ts=646d772c">Click here for testing CEH </a>
+ </form>  
 </body>
-
 </html>
